@@ -1,29 +1,27 @@
 // React
 import React from 'react';
-import PropTypes from 'prop-types';
+
+// Timer Component
+import Timer from './Timer';
+
+// Containers
+import withHooks from './hooks_container';
+import withStatefulClass from './steteful_container';
 
 
-import withTime from './hooks_container';
+
+const TimerWithHooks = withHooks(Timer);
+const TimerWithClass = withStatefulClass(Timer);
 
 
 
-const Timer = ({
-    time,
-    ...rest
-}) => (
-    <div {...rest}>
-        <p>
-            <strong>{time}</strong> seconds have passed since component mounted.
-        </p>
+const TimerExample = () => (
+    <div>
+        <TimerWithHooks />
+        <TimerWithClass />
     </div>
 );
 
 
 
-Timer.propTypes = {
-    time: PropTypes.string.isRequired,
-};
-
-
-
-export default withTime(Timer);
+export default TimerExample;
