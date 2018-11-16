@@ -17,7 +17,12 @@ const TimerWithClass = withStatefulClass(Timer);
 
 const TimerExample = () => (
     <div>
+        <h3>Timer With Hooks</h3>
         <TimerWithHooks />
+
+        <hr/>
+
+        <h3>Timer With Class</h3>
         <TimerWithClass />
     </div>
 );
