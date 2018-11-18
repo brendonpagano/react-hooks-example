@@ -1,8 +1,9 @@
 // React
 import React from 'react';
 
-// Timer Component
+// Timer Components
 import Timer from './Timer';
+import HooksTimer from './HooksTimer';
 
 // Containers
 import withHooks from './hooks_container';
@@ -10,20 +11,25 @@ import withStatefulClass from './steteful_container';
 
 
 
-const TimerWithHooks = withHooks(Timer);
-const TimerWithClass = withStatefulClass(Timer);
+const TimerWithHooksContainer = withHooks(Timer);
+const TimerWithClassHOC = withStatefulClass(Timer);
 
 
 
 const TimerExample = () => (
     <div>
-        <h3>Timer With Hooks</h3>
-        <TimerWithHooks />
+        <h3>Timer With Hooks HOC</h3>
+        <TimerWithHooksContainer />
 
         <hr/>
 
-        <h3>Timer With Class</h3>
-        <TimerWithClass />
+        <h3>Timer With Class HOC</h3>
+        <TimerWithClassHOC />
+
+        <hr/>
+
+        <h3>Timer using Custom Hook</h3>
+        <HooksTimer />
     </div>
 );
 
